@@ -17,9 +17,7 @@
       </a>
       <nav class="header-links" aria-label="主選單">
         <a href="#catalog-title">探索圖鑑</a>
-        <a href="#about">關於專案</a>
       </nav>
-      <span class="nav-note">非官方 · 學習專案</span>
     </div>
   </header>
 
@@ -27,9 +25,8 @@
     <section class="hero">
       <div class="shell hero-content">
         <div class="hero-copy">
-          <div class="hero-pill"><span class="pulse-dot"></span> 尋找你的寶可夢夥伴</div>
-          <h1>每一次探索，<br>都是新的<span>相遇。</span></h1>
-          <p id="hero-scope">探索第一世代的 151 隻寶可夢，認識牠們的屬性、能力值與進化路線。</p>
+          <h1><span>寶可夢</span>圖鑑</h1>
+          <p>搜尋第一世代寶可夢，查看屬性、能力值與進化路線。</p>
           <div class="hero-actions">
             <a class="primary-btn" href="#catalog-title">開始探索 <span aria-hidden="true">↗</span></a>
             <span id="range-label" class="hero-range"></span>
@@ -45,9 +42,7 @@
     <section class="catalog-section shell" aria-labelledby="catalog-title">
       <div class="section-heading">
         <div>
-          <span class="eyebrow">全國圖鑑</span>
-          <h2 id="catalog-title">探索圖鑑 <span class="heading-spark">✳</span></h2>
-          <p>找到你的夥伴，解鎖更多寶可夢知識。</p>
+          <h2 id="catalog-title">寶可夢列表</h2>
         </div>
         <span class="collection-mark" id="generation-label">第一世代 · 關都</span>
       </div>
@@ -65,22 +60,13 @@
 
       <div class="results-row">
         <p id="status" role="status" aria-live="polite">準備載入圖鑑…</p>
+        <a id="online-catalog" href="https://kai2777.github.io/pokewiki/" hidden>開啟線上圖鑑</a>
         <button id="retry" class="retry-btn" type="button" hidden>重新載入</button>
       </div>
       <div id="pokemon-grid" class="pokemon-grid" aria-label="寶可夢列表"></div>
       <nav id="pagination" class="pagination" aria-label="圖鑑頁碼"></nav>
     </section>
 
-    <section class="about-section" id="about">
-      <div class="shell about-inner">
-        <div>
-          <span class="eyebrow">關於專案</span>
-          <h2>一座可以不斷成長的圖鑑。</h2>
-          <p>PokéWiki 以 HTML、CSS、JavaScript 和 PokéAPI 建立；透過 AGENTS.md 定義統一規則，未來就能讓 AI 持續擴充世代與新功能，不必重做網站。</p>
-        </div>
-        <div class="about-tag">持續擴充圖鑑<br><strong>探索更多寶可夢</strong></div>
-      </div>
-    </section>
   </main>
 
   <dialog id="detail-dialog" aria-label="寶可夢詳細資訊">
@@ -90,10 +76,10 @@
 
   <footer class="footer">
     <div class="shell footer-inner">
-      <span><strong>PokéWiki</strong> · 非官方、非商業課堂教育作品</span>
+      <span><strong>PokéWiki</strong> · 非官方、非商業教育作品</span>
       <span>資料：<a href="https://pokeapi.co/" target="_blank" rel="noopener noreferrer">PokéAPI</a> · 寶可夢角色、名稱及圖像權利屬其各自權利人。</span>
     </div>
   </footer>
-  <script type="module" src="./js/app.js"></script>
+  <script type="module" src="./js/app.js" onerror="document.getElementById('status').textContent = location.protocol === 'file:' ? '請透過本機 HTTP 伺服器開啟下載版，或使用線上圖鑑。' : '無法載入圖鑑程式，請重新整理頁面。'; document.getElementById('online-catalog').hidden = false;"></script>
 </body>
 </html>

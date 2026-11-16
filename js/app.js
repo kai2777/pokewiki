@@ -27,7 +27,6 @@ function initLabels() {
   const total = POKEDEX_END - POKEDEX_START + 1;
   rangeLabel.textContent = `${formatDexId(POKEDEX_START)} — ${formatDexId(POKEDEX_END)} · 共 ${total} 隻`;
   document.querySelector('#generation-label').textContent = generationLabel();
-  document.querySelector('#hero-scope').textContent = `探索圖鑑中的 ${total} 隻寶可夢，認識牠們的屬性、能力值與進化路線。`;
   Object.entries(TYPE_INFO).forEach(([key, info]) => {
     const option = document.createElement('option');
     option.value = key;

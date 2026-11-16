@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#df4c51">
+  <meta name="description" content="PokéWiki — 非官方寶可夢互動圖鑑，搜尋第一世代寶可夢、查看屬性、六項能力值與進化路線。">
+  <title>PokéWiki｜寶可夢互動圖鑑</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell nav-inner">
+      <a class="brand" href="./index.html" aria-label="PokéWiki 首頁">
+        <span class="brand-mark" aria-hidden="true"><span></span></span>
+        <span>Poké<span class="brand-accent">Wiki</span></span>
+      </a>
+      <nav class="header-links" aria-label="主選單">
+        <a href="#catalog-title">探索圖鑑</a>
+        <a href="#about">關於專案</a>
+      </nav>
+      <span class="nav-note">非官方 · 學習專案</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="shell hero-content">
+        <div class="hero-copy">
+          <div class="hero-pill"><span class="pulse-dot"></span> 尋找你的寶可夢夥伴</div>
+          <h1>每一次探索，<br>都是新的<span>相遇。</span></h1>
+          <p id="hero-scope">探索第一世代的 151 隻寶可夢，認識牠們的屬性、能力值與進化路線。</p>
+          <div class="hero-actions">
+            <a class="primary-btn" href="#catalog-title">開始探索 <span aria-hidden="true">↗</span></a>
+            <span id="range-label" class="hero-range"></span>
+          </div>
+        </div>
+        <div class="hero-decoration" aria-hidden="true">
+          <div class="orb orb-back"></div><div class="orb orb-front"><span class="orb-center"></span></div>
+          <span class="hero-spark spark-one">✦</span><span class="hero-spark spark-two">✦</span><span class="hero-spark spark-three">✧</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalog-section shell" aria-labelledby="catalog-title">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">全國圖鑑</span>
+          <h2 id="catalog-title">探索圖鑑 <span class="heading-spark">✳</span></h2>
+          <p>找到你的夥伴，解鎖更多寶可夢知識。</p>
+        </div>
+        <span class="collection-mark" id="generation-label">第一世代 · 關都</span>
+      </div>
+
+      <div class="filter-panel">
+        <label class="search-field" for="search">
+          <span class="field-label">搜尋寶可夢</span>
+          <span class="field-control"><span class="search-icon" aria-hidden="true">⌕</span><input id="search" type="search" placeholder="輸入中文、英文名稱或圖鑑編號…" autocomplete="off"></span>
+        </label>
+        <label class="type-field" for="type-filter">
+          <span class="field-label">屬性篩選</span>
+          <span class="field-control"><select id="type-filter"><option value="all">全部屬性</option></select></span>
+        </label>
+      </div>
+
+      <div class="results-row">
+        <p id="status" role="status" aria-live="polite">準備載入圖鑑…</p>
+        <button id="retry" class="retry-btn" type="button" hidden>重新載入</button>
+      </div>
+      <div id="pokemon-grid" class="pokemon-grid" aria-label="寶可夢列表"></div>
+      <nav id="pagination" class="pagination" aria-label="圖鑑頁碼"></nav>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="shell about-inner">
+        <div>
+          <span class="eyebrow">關於專案</span>
+          <h2>一座可以不斷成長的圖鑑。</h2>
+          <p>PokéWiki 以 HTML、CSS、JavaScript 和 PokéAPI 建立；透過 AGENTS.md 定義統一規則，未來就能讓 AI 持續擴充世代與新功能，不必重做網站。</p>
+        </div>
+        <div class="about-tag">持續擴充圖鑑<br><strong>探索更多寶可夢</strong></div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="detail-dialog" aria-label="寶可夢詳細資訊">
+    <div class="dialog-bar"><span>PokéWiki · 寶可夢詳細資料</span><button id="close-detail" class="close-btn" type="button" aria-label="關閉詳細資料">✕</button></div>
+    <div id="detail-content" aria-live="polite"></div>
+  </dialog>
+
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <span><strong>PokéWiki</strong> · 非官方、非商業課堂教育作品</span>
+      <span>資料：<a href="https://pokeapi.co/" target="_blank" rel="noopener noreferrer">PokéAPI</a> · 寶可夢角色、名稱及圖像權利屬其各自權利人。</span>
+    </div>
+  </footer>
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>

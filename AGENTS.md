@@ -13,11 +13,11 @@
 
 ## 2. 技術與部署限制
 
-1. 僅使用 **HTML5、CSS3、原生 JavaScript ES Modules**。
+1. 僅使用 **HTML5、CSS3、原生 JavaScript**。
 2. 不使用 React、Vue、TypeScript、npm 建置工具或後端；新增依賴前須取得使用者同意。
 3. 資料來源為 **PokéAPI v2**：`https://pokeapi.co/api/v2/`；圖片使用 PokéAPI sprites 專案提供的線上素材位址。
 4. 必須是可直接發布於 **GitHub Pages** 的靜態網站：使用 `./` 等相對路徑，不得依賴網域根目錄 `/`。
-5. 本機測試應透過 HTTP 伺服器（如 VS Code Live Server 或 `python -m http.server 8000`），不要假設 `file://` 能正常運作 ES Modules。
+5. 下載版須支援雙擊 index.html，以 file:// 開啟。四支 JavaScript 使用 defer 依 config、api、ui、app 順序載入，透過 window.PokeWiki 共用介面；同時維持 HTTP 與 GitHub Pages 相容性。資料與圖片仍需連網。
 6. 禁止把 API 金鑰、密碼、個資、完整 API 回應或未授權圖像素材提交到 Repository。
 
 ## 3. 專案目錄與檔案責任
